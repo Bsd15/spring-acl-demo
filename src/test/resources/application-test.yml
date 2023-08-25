@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:latest:///kharchula_jabitha
+    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  security:
+    password-encoder:
+      bcrypt:
+        strength: 10
+  sql:
+    init:
+      mode: always
+#      data-locations: "classpath:/createAclSchemaPostgres.sql"
+
+logging:
+  level:
+    com:
+      bsd: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE

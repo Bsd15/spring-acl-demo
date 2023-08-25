@@ -1,0 +1,21 @@
+spring:
+  sql:
+    init:
+      mode: always
+#      data-locations: "classpath:/createAclSchemaPostgres.sql"
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    initialization-mode: always
+  liquibase:
+    changeLog: classpath:/database/changelog-master.yaml
+
+logging:
+  level:
+    com:
+      bsd: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
